@@ -1,0 +1,495 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Conteneur des boules */
+.animated-spheres {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Style des boules */
+.sphere {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, #e44c2a, #471f17);
+    /* Couleur spécifique 1 */
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: float 5s ease-in-out infinite;
+    cursor: pointer;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Boule : interaction au survol */
+.sphere:hover {
+    background: radial-gradient(circle, #100c5b, #82ff72);
+    /* Couleur spécifique 2 */
+    transform: scale(1.2) translateZ(50px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .cover-container {
+    position: relative;
+    text-align: center;
+
+}
+
+.cover-container {
+    background-color: rgb(17, 5, 53);
+    /* Remplacez par la couleur souhaitée (ici vert) */
+    width: 100%;
+    height: 300px;
+    /* Ajustez la hauteur si nécessaire */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.cover-text h1 {
+    font-size: 2.5em;
+    margin: 0;
+}
+
+.cover-text p {
+    font-size: 1.5em;
+    margin: 10px 0 0;
+    color: #e44c2a;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #000831;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+
+}
+
+.sidebar p {
+    color: #e44c2a;
+}
+
+.sidebar img {
+    width: 80%;
+    border-radius: 50%;
+    margin: 10px 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 0;
+    display: block;
+    transition: background 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background: #575757;
+}
+
+.content {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.skill-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.skill-icon {
+    font-size: 33px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    background-color: #e44c2a;
+    border-radius: 5px;
+    transition: width 0.5s ease;
+}
+
+.percentage {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #e44c2a;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery .img {
+    flex: 1 1 calc(33.333% - 20px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+
+    padding: 10rem 1rem;
+
+
+}
+
+/* Agrandir le h1 et le p des sections 1 et 2 */
+
+#section2 h1,
+#section3 h2,
+#section4 h2,
+#section5 h2,
+#section6 h2 {
+    font-size: 2rem;
+    /* Ajustez selon vos besoins */
+    font-weight: bold;
+    text-align: center;
+    justify-items: center;
+
+
+}
+
+#section1 h1 {
+    font-size: 4rem;
+    /* Ajustez selon vos besoins */
+    font-weight: bold;
+    color: #e44c2a;
+
+
+    margin-top: -100px;
+
+}
+
+#section1 p,
+#section2 p {
+    font-size: 1.2rem;
+    /* Ajustez selon vos besoins */
+    line-height: 1.8;
+    /* Pour un meilleur espacement */
+}
+
+/* Section container */
+.services-section {
+    background: linear-gradient(135deg, #f7f7f7, #eaeaea);
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* Section Title */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Background animation container */
+#animated-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+/* Background layers (images or shapes) */
+#animated-background::before,
+#animated-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background-image: url('asset/it-support.jpg'), url('asset/ui-ux-design.webp');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    transform: translateZ(-300px) scale(1.5);
+    animation: moveBackground 15s infinite alternate ease-in-out;
+}
+
+/* Sections */
+.sections {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Services Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Service Card */
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Service Title */
+.service-card h3 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Service Description */
+.service-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.contact-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2f575760;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.contact-form .submit-btn {
+    display: block;
+    width: 35%;
+    margin: 20px auto;
+    /* Centrage horizontal et espacement au-dessus */
+    padding: 10px;
+    background-color: #0d0245;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    background-color: #000831;
+    color: white;
+    padding: 20px 0;
+    margin-top: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 210px;
+    }
+
+    .gallery .img {
+        flex: 1 1 calc(50% - 20px);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-container {
+        gap: 10px;
+    }
+
+    .skill-bar {
+        font-size: 14px;
+    }
+
+    .progress-bar {
+        height: 8px;
+    }
+
+    .percentage {
+        font-size: 12px;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 15px;
+    }
+
+    .contact-form .submit-btn {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        display: none;
+    }
+
+    .content {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .gallery .img {
+        flex: 1 1 100%;
+    }
+}
+
+/* Animation des boules */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-30px) translateX(20px) rotate(45deg);
+    }
+
+    50% {
+        transform: translateY(30px) translateX(-20px) rotate(90deg);
+    }
+
+    75% {
+        transform: translateY(-30px) translateX(-20px) rotate(135deg);
+    }
+}
+
+/* Responsive : taille des boules pour les écrans plus petits */
+@media (max-width: 768px) {
+    .sphere {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .sphere {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Animation for background movement */
+@keyframes moveBackground {
+    0% {
+        transform: translateZ(-300px) scale(1.5) translateX(0);
+    }
+
+    100% {
+        transform: translateZ(-200px) scale(1.2) translateX(-20%);
+    }
+}
